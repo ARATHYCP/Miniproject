@@ -1,0 +1,12 @@
+#Doing Some Predictions on Test Data
+fig, axes = plt.subplots(3,3, figsize=(8,9))
+axes = axes.flatten()
+for i,ax in enumerate(axes):
+    img = np.reshape(test_X[i], (28,28))
+    ax.imshow(img, cmap="Greys")
+    
+    pred = word_dict[np.argmax(test_yOHE[i])]
+    ax.set_title("Prediction: "+pred)
+    ax.grid()
+    
+    
